@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Свиноводство</title>
-    <meta name="description" content="Информация о домашних свиньях и сельском хозяйстве.">
+    <title>Подложи свинью - Свиноводство и разведение свиней</title>
+    <meta name="description" content="Информация о домашних свиньях, свиноводстве и сельском хозяйстве. Породы свиней, кормление, разведение.">
+    <meta name="keywords" content="свиноводство, домашние свиньи, разведение свиней, сельское хозяйство, животноводство">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Свиноводческое хозяйство">
+    
+    <!-- Open Graph для соцсетей -->
+    <meta property="og:title" content="Подложи свинью - Свиноводство">
+    <meta property="og:description" content="Информация о домашних свиньях и свиноводстве">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.iconarchive.com/download/i137822/microsoft/fluentui-emoji-3d/Pig-Face-3d.1024.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7wn5C3PC90ZXh0Pjwvc3ZnPg==">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7wn5C3PC90ZXh0Pjwvc3ZnPg==">
+    
     <style>
         * {
             box-sizing: border-box;
@@ -158,182 +172,54 @@
 
         /* Медиа-запросы для мобильной адаптивности */
         @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-            
-            .container {
-                padding: 25px 15px 30px 15px;
-                border-radius: 16px;
-                max-width: 95%;
-            }
-            
-            .title {
-                font-size: 24px;
-                margin-bottom: 30px;
-                letter-spacing: 0.5px;
-            }
-            
-            .pig-image {
-                width: 100px;
-                height: 100px;
-            }
-            
-            .arrow {
-                width: 25px;
-                height: 25px;
-            }
-            
-            .arrow-left {
-                left: -32px;
-            }
-            
-            .arrow-right {
-                right: -32px;
-            }
-            
-            .arrow-top {
-                top: -30px;
-            }
-            
-            .subtitle {
-                font-size: 15px;
-            }
-            
-            .disclaimer {
-                font-size: 10px;
-                padding: 0 5px;
-            }
+            body { padding: 10px; }
+            .container { padding: 25px 15px 30px 15px; border-radius: 16px; max-width: 95%; }
+            .title { font-size: 24px; margin-bottom: 30px; letter-spacing: 0.5px; }
+            .pig-image { width: 100px; height: 100px; }
+            .arrow { width: 25px; height: 25px; }
+            .arrow-left { left: -32px; }
+            .arrow-right { right: -32px; }
+            .arrow-top { top: -30px; }
+            .subtitle { font-size: 15px; }
+            .disclaimer { font-size: 10px; padding: 0 5px; }
         }
 
         @media (max-width: 320px) {
-            .container {
-                padding: 20px 12px 25px 12px;
-            }
-            
-            .title {
-                font-size: 22px;
-                margin-bottom: 25px;
-            }
-            
-            .pig-image {
-                width: 90px;
-                height: 90px;
-            }
-            
-            .arrow {
-                width: 22px;
-                height: 22px;
-            }
-            
-            .arrow-left {
-                left: -28px;
-            }
-            
-            .arrow-right {
-                right: -28px;
-            }
-            
-            .arrow-top {
-                top: -25px;
-            }
-            
-            .subtitle {
-                font-size: 14px;
-            }
+            .container { padding: 20px 12px 25px 12px; }
+            .title { font-size: 22px; margin-bottom: 25px; }
+            .pig-image { width: 90px; height: 90px; }
+            .arrow { width: 22px; height: 22px; }
+            .arrow-left { left: -28px; }
+            .arrow-right { right: -28px; }
+            .arrow-top { top: -25px; }
+            .subtitle { font-size: 14px; }
         }
 
-        /* Планшеты */
         @media (min-width: 481px) and (max-width: 768px) {
-            .container {
-                padding: 40px 30px 45px 30px;
-                border-radius: 24px;
-                max-width: 80%;
-            }
-            
-            .title {
-                font-size: 36px;
-                margin-bottom: 50px;
-            }
-            
-            .pig-image {
-                width: 160px;
-                height: 160px;
-            }
-            
-            .arrow {
-                width: 40px;
-                height: 40px;
-            }
-            
-            .arrow-left {
-                left: -55px;
-            }
-            
-            .arrow-right {
-                right: -55px;
-            }
-            
-            .arrow-top {
-                top: -45px;
-            }
-            
-            .subtitle {
-                font-size: 18px;
-            }
+            .container { padding: 40px 30px 45px 30px; border-radius: 24px; max-width: 80%; }
+            .title { font-size: 36px; margin-bottom: 50px; }
+            .pig-image { width: 160px; height: 160px; }
+            .arrow { width: 40px; height: 40px; }
+            .arrow-left { left: -55px; }
+            .arrow-right { right: -55px; }
+            .arrow-top { top: -45px; }
+            .subtitle { font-size: 18px; }
         }
 
-        /* Десктоп */
         @media (min-width: 769px) {
-            .container {
-                padding: 50px 60px 60px 60px;
-                border-radius: 32px;
-                max-width: 550px;
-            }
-            
-            .title {
-                font-size: 48px;
-                margin-bottom: 80px;
-                letter-spacing: 3px;
-            }
-            
-            .pig-image {
-                width: 220px;
-                height: 220px;
-            }
-            
-            .arrow {
-                width: 50px;
-                height: 50px;
-            }
-            
-            .arrow-left {
-                left: -70px;
-            }
-            
-            .arrow-right {
-                right: -70px;
-            }
-            
-            .arrow-top {
-                top: -60px;
-            }
-            
-            .subtitle {
-                font-size: 21px;
-            }
-            
-            .disclaimer {
-                font-size: 12px;
-                margin-top: 30px;
-            }
+            .container { padding: 50px 60px 60px 60px; border-radius: 32px; max-width: 550px; }
+            .title { font-size: 48px; margin-bottom: 80px; letter-spacing: 3px; }
+            .pig-image { width: 220px; height: 220px; }
+            .arrow { width: 50px; height: 50px; }
+            .arrow-left { left: -70px; }
+            .arrow-right { right: -70px; }
+            .arrow-top { top: -60px; }
+            .subtitle { font-size: 21px; }
+            .disclaimer { font-size: 12px; margin-top: 30px; }
         }
 
-        /* Большие экраны */
         @media (min-width: 1200px) {
-            .container {
-                padding: 60px 80px 70px 80px;
-            }
+            .container { padding: 60px 80px 70px 80px; }
         }
     </style>
 </head>
