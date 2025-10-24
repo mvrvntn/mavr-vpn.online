@@ -1,20 +1,5 @@
-
-                        <!DOCTYPE html>
-                        <html lang="en">
-                        <head>
-                            <meta charset="UTF-8">
-                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <style>
-                body {
-                  background-color: white; /* Ensure the iframe has a white background */
-                }
-    
-                
-              </style>
-                        </head>
-                        <body>
-                            <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +12,7 @@
 
         body {
             margin: 0;
-            padding: 20px;
+            padding: 15px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             display: flex;
@@ -38,11 +23,11 @@
 
         .container {
             background: rgba(255, 255, 255, 0.95);
-            border-radius: 32px;
-            padding: 50px 80px 60px 80px;
+            border-radius: 20px;
+            padding: 30px 20px 40px 20px;
             text-align: center;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
-            max-width: 550px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
             width: 100%;
             animation: slideIn 0.6s ease-out;
         }
@@ -59,21 +44,22 @@
         }
 
         .title {
-            font-size: 48px;
+            font-size: 28px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-weight: bold;
-            margin-bottom: 80px;
-            letter-spacing: 3px;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
             filter: drop-shadow(0 2px 8px rgba(102, 126, 234, 0.3));
+            line-height: 1.2;
         }
 
         .pig-wrapper {
             position: relative;
             display: inline-block;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .pig-link {
@@ -84,51 +70,51 @@
         }
 
         .pig-link:hover {
-            transform: scale(1.12) rotate(-5deg);
+            transform: scale(1.05) rotate(-3deg);
         }
 
         .pig-link:active {
-            transform: scale(0.92);
+            transform: scale(0.95);
         }
 
         .pig-image {
-            width: 220px;
-            height: 220px;
+            width: 120px;
+            height: 120px;
             animation: bounce 2.5s infinite ease-in-out;
-            filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.35));
+            filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.25));
         }
 
         @keyframes bounce {
             0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-18px) rotate(-3deg); }
-            50% { transform: translateY(-8px) rotate(0deg); }
-            75% { transform: translateY(-15px) rotate(3deg); }
+            25% { transform: translateY(-10px) rotate(-2deg); }
+            50% { transform: translateY(-5px) rotate(0deg); }
+            75% { transform: translateY(-8px) rotate(2deg); }
         }
 
         .arrow {
             position: absolute;
-            width: 50px;
-            height: 50px;
+            width: 30px;
+            height: 30px;
             pointer-events: none;
-            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+            filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.15));
         }
 
         .arrow-left {
-            left: -70px;
+            left: -40px;
             top: 50%;
             transform: translateY(-50%) scaleX(-1);
             animation: pulseLeft 1.6s infinite ease-in-out;
         }
 
         .arrow-right {
-            right: -70px;
+            right: -40px;
             top: 50%;
             transform: translateY(-50%);
             animation: pulseRight 1.6s infinite ease-in-out;
         }
 
         .arrow-top {
-            top: -60px;
+            top: -35px;
             left: 50%;
             transform: translateX(-50%) rotate(270deg);
             animation: pulseTop 1.6s infinite ease-in-out;
@@ -136,22 +122,22 @@
 
         @keyframes pulseLeft {
             0%, 100% { opacity: 1; transform: translateY(-50%) scaleX(-1) scale(1); }
-            50% { opacity: 0.35; transform: translateY(-50%) scaleX(-1) scale(1.25); }
+            50% { opacity: 0.4; transform: translateY(-50%) scaleX(-1) scale(1.15); }
         }
 
         @keyframes pulseRight {
             0%, 100% { opacity: 1; transform: translateY(-50%) scale(1); }
-            50% { opacity: 0.35; transform: translateY(-50%) scale(1.25); }
+            50% { opacity: 0.4; transform: translateY(-50%) scale(1.15); }
         }
 
         @keyframes pulseTop {
             0%, 100% { opacity: 1; transform: translateX(-50%) rotate(270deg) scale(1); }
-            50% { opacity: 0.35; transform: translateX(-50%) rotate(270deg) scale(1.25); }
+            50% { opacity: 0.4; transform: translateX(-50%) rotate(270deg) scale(1.15); }
         }
 
         .subtitle {
             color: #667eea;
-            font-size: 21px;
+            font-size: 16px;
             font-weight: 600;
             margin-top: 10px;
             animation: subtitlePulse 2.5s infinite ease-in-out;
@@ -159,18 +145,196 @@
 
         @keyframes subtitlePulse {
             0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.75; transform: scale(1.04); }
+            50% { opacity: 0.75; transform: scale(1.02); }
         }
 
         .disclaimer {
-            margin-top: 30px;
-            font-size: 12px;
+            margin-top: 25px;
+            font-size: 11px;
             color: #888;
             line-height: 1.4;
+            padding: 0 10px;
         }
 
-        /* Все медиа-запросы остаются без изменений */
-        /* ... (оставьте ваш текущий CSS для адаптивности) ... */
+        /* Медиа-запросы для мобильной адаптивности */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 25px 15px 30px 15px;
+                border-radius: 16px;
+                max-width: 95%;
+            }
+            
+            .title {
+                font-size: 24px;
+                margin-bottom: 30px;
+                letter-spacing: 0.5px;
+            }
+            
+            .pig-image {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .arrow {
+                width: 25px;
+                height: 25px;
+            }
+            
+            .arrow-left {
+                left: -32px;
+            }
+            
+            .arrow-right {
+                right: -32px;
+            }
+            
+            .arrow-top {
+                top: -30px;
+            }
+            
+            .subtitle {
+                font-size: 15px;
+            }
+            
+            .disclaimer {
+                font-size: 10px;
+                padding: 0 5px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .container {
+                padding: 20px 12px 25px 12px;
+            }
+            
+            .title {
+                font-size: 22px;
+                margin-bottom: 25px;
+            }
+            
+            .pig-image {
+                width: 90px;
+                height: 90px;
+            }
+            
+            .arrow {
+                width: 22px;
+                height: 22px;
+            }
+            
+            .arrow-left {
+                left: -28px;
+            }
+            
+            .arrow-right {
+                right: -28px;
+            }
+            
+            .arrow-top {
+                top: -25px;
+            }
+            
+            .subtitle {
+                font-size: 14px;
+            }
+        }
+
+        /* Планшеты */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .container {
+                padding: 40px 30px 45px 30px;
+                border-radius: 24px;
+                max-width: 80%;
+            }
+            
+            .title {
+                font-size: 36px;
+                margin-bottom: 50px;
+            }
+            
+            .pig-image {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .arrow {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .arrow-left {
+                left: -55px;
+            }
+            
+            .arrow-right {
+                right: -55px;
+            }
+            
+            .arrow-top {
+                top: -45px;
+            }
+            
+            .subtitle {
+                font-size: 18px;
+            }
+        }
+
+        /* Десктоп */
+        @media (min-width: 769px) {
+            .container {
+                padding: 50px 60px 60px 60px;
+                border-radius: 32px;
+                max-width: 550px;
+            }
+            
+            .title {
+                font-size: 48px;
+                margin-bottom: 80px;
+                letter-spacing: 3px;
+            }
+            
+            .pig-image {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .arrow {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .arrow-left {
+                left: -70px;
+            }
+            
+            .arrow-right {
+                right: -70px;
+            }
+            
+            .arrow-top {
+                top: -60px;
+            }
+            
+            .subtitle {
+                font-size: 21px;
+            }
+            
+            .disclaimer {
+                font-size: 12px;
+                margin-top: 30px;
+            }
+        }
+
+        /* Большие экраны */
+        @media (min-width: 1200px) {
+            .container {
+                padding: 60px 80px 70px 80px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -194,7 +358,6 @@
     </div>
 
     <script>
-        // Собираем ссылку динамически
         document.addEventListener('DOMContentLoaded', () => {
             const botName = 'mavrvpnbot';
             const fullLink = `https://t.me/${botName}`;
@@ -203,7 +366,6 @@
 
             pigLink.href = fullLink;
 
-            // Меняем текст при наведении
             pigLink.addEventListener('mouseenter', () => {
                 subtitle.textContent = 'ты уверен?';
             });
@@ -215,16 +377,3 @@
     </script>
 </body>
 </html>
-
-
-    
-              <script>
-                                const botName = "mavrvpnbot";
-  const link = `https://t.me/${botName}`;
-  document.querySelector('.pig-link').href = link;
-  
-
-              </script>
-                        </body>
-                        </html>
-                    
