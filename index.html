@@ -15,6 +15,16 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://www.iconarchive.com/download/i137822/microsoft/fluentui-emoji-3d/Pig-Face-3d.1024.png">
     
+    <!-- Дополнительные meta-теги для производительности -->
+    <meta name="theme-color" content="#667eea">
+    <meta name="color-scheme" content="light">
+    <link rel="dns-prefetch" href="//www.iconarchive.com">
+    <link rel="preconnect" href="https://t.me">
+    
+    <!-- Предзагрузка критических изображений -->
+    <link rel="preload" as="image" href="https://www.iconarchive.com/download/i137822/microsoft/fluentui-emoji-3d/Pig-Face-3d.1024.png">
+    <link rel="preload" as="image" href="https://www.iconarchive.com/download/i109761/microsoft/fluentui-emoji-3d/Backhand-Index-Pointing-Left-3d-Light.1024.png">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7wn5C3PC90ZXh0Pjwvc3ZnPg==">
     <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7wn5C3PC90ZXh0Pjwvc3ZnPg==">
@@ -44,6 +54,7 @@
             max-width: 90%;
             width: 100%;
             animation: slideIn 0.6s ease-out;
+            will-change: auto;
         }
 
         @keyframes slideIn {
@@ -84,11 +95,11 @@
         }
 
         .pig-link:hover {
-            transform: scale(1.05) rotate(-3deg);
+            transform: scale(1.05) rotate(-3deg) translateZ(0);
         }
 
         .pig-link:active {
-            transform: scale(0.95);
+            transform: scale(0.95) translateZ(0);
         }
 
         .pig-image {
@@ -96,13 +107,16 @@
             height: 120px;
             animation: bounce 2.5s infinite ease-in-out;
             filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.25));
+            will-change: transform;
+            backface-visibility: hidden;
+            perspective: 1000px;
         }
 
         @keyframes bounce {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-10px) rotate(-2deg); }
-            50% { transform: translateY(-5px) rotate(0deg); }
-            75% { transform: translateY(-8px) rotate(2deg); }
+            0%, 100% { transform: translateY(0) rotate(0deg) translateZ(0); }
+            25% { transform: translateY(-10px) rotate(-2deg) translateZ(0); }
+            50% { transform: translateY(-5px) rotate(0deg) translateZ(0); }
+            75% { transform: translateY(-8px) rotate(2deg) translateZ(0); }
         }
 
         .arrow {
@@ -111,42 +125,44 @@
             height: 30px;
             pointer-events: none;
             filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.15));
+            will-change: transform;
+            backface-visibility: hidden;
         }
 
         .arrow-left {
             left: -40px;
             top: 50%;
-            transform: translateY(-50%) scaleX(-1);
+            transform: translateY(-50%) scaleX(-1) translateZ(0);
             animation: pulseLeft 1.6s infinite ease-in-out;
         }
 
         .arrow-right {
             right: -40px;
             top: 50%;
-            transform: translateY(-50%);
+            transform: translateY(-50%) translateZ(0);
             animation: pulseRight 1.6s infinite ease-in-out;
         }
 
         .arrow-top {
             top: -35px;
             left: 50%;
-            transform: translateX(-50%) rotate(270deg);
+            transform: translateX(-50%) rotate(270deg) translateZ(0);
             animation: pulseTop 1.6s infinite ease-in-out;
         }
 
         @keyframes pulseLeft {
-            0%, 100% { opacity: 1; transform: translateY(-50%) scaleX(-1) scale(1); }
-            50% { opacity: 0.4; transform: translateY(-50%) scaleX(-1) scale(1.15); }
+            0%, 100% { opacity: 1; transform: translateY(-50%) scaleX(-1) scale(1) translateZ(0); }
+            50% { opacity: 0.4; transform: translateY(-50%) scaleX(-1) scale(1.15) translateZ(0); }
         }
 
         @keyframes pulseRight {
-            0%, 100% { opacity: 1; transform: translateY(-50%) scale(1); }
-            50% { opacity: 0.4; transform: translateY(-50%) scale(1.15); }
+            0%, 100% { opacity: 1; transform: translateY(-50%) scale(1) translateZ(0); }
+            50% { opacity: 0.4; transform: translateY(-50%) scale(1.15) translateZ(0); }
         }
 
         @keyframes pulseTop {
-            0%, 100% { opacity: 1; transform: translateX(-50%) rotate(270deg) scale(1); }
-            50% { opacity: 0.4; transform: translateX(-50%) rotate(270deg) scale(1.15); }
+            0%, 100% { opacity: 1; transform: translateX(-50%) rotate(270deg) scale(1) translateZ(0); }
+            50% { opacity: 0.4; transform: translateX(-50%) rotate(270deg) scale(1.15) translateZ(0); }
         }
 
         .subtitle {
@@ -158,8 +174,8 @@
         }
 
         @keyframes subtitlePulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.75; transform: scale(1.02); }
+            0%, 100% { opacity: 1; transform: scale(1) translateZ(0); }
+            50% { opacity: 0.75; transform: scale(1.02) translateZ(0); }
         }
 
         .disclaimer {
@@ -168,6 +184,43 @@
             color: #888;
             line-height: 1.4;
             padding: 0 10px;
+        }
+
+        /* Оптимизация для пользователей с предпочтением уменьшения движения */
+        @media (prefers-reduced-motion: reduce) {
+            .pig-image,
+            .arrow,
+            .subtitle,
+            .container {
+                animation: none !important;
+                transition: none !important;
+            }
+            
+            .pig-link:hover {
+                transform: scale(1.02) translateZ(0);
+            }
+        }
+
+        /* Оптимизация для слабых устройств */
+        @media (max-width: 480px) and (max-resolution: 150dpi) {
+            .pig-image {
+                animation-duration: 4s;
+            }
+            
+            .arrow {
+                animation-duration: 2.4s;
+            }
+        }
+
+        /* Упрощенная версия для медленных соединений */
+        .slow-connection .pig-image,
+        .slow-connection .arrow {
+            animation: none;
+            filter: none;
+        }
+
+        .slow-connection .container {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         /* Медиа-запросы для мобильной адаптивности */
@@ -231,9 +284,9 @@
             <a href="#" class="pig-link" id="pigLink">
                 <img src="https://www.iconarchive.com/download/i137822/microsoft/fluentui-emoji-3d/Pig-Face-3d.1024.png" alt="Свинья" class="pig-image">
             </a>
-            <img src="https://www.iconarchive.com/download/i109761/microsoft/fluentui-emoji-3d/Backhand-Index-Pointing-Left-3d-Light.1024.png" class="arrow arrow-left" alt="">
-            <img src="https://www.iconarchive.com/download/i109761/microsoft/fluentui-emoji-3d/Backhand-Index-Pointing-Left-3d-Light.1024.png" class="arrow arrow-right" alt="">
-            <img src="https://www.iconarchive.com/download/i109761/microsoft/fluentui-emoji-3d/Backhand-Index-Pointing-Left-3d-Light.1024.png" class="arrow arrow-top" alt="">
+            <img src="https://www.iconarchive.com/download/i109761/microsoft/fluentui-emoji-3d/Backhand-Index-Pointing-Left-3d-Light.1024.png" class="arrow arrow-left" alt="" loading="lazy">
+            <img src="https://www.iconarchive.com/download/i109761/microsoft/fluentui-emoji-3d/Backhand-Index-Pointing-Left-3d-Light.1024.png" class="arrow arrow-right" alt="" loading="lazy">
+            <img src="https://www.iconarchive.com/download/i109761/microsoft/fluentui-emoji-3d/Backhand-Index-Pointing-Left-3d-Light.1024.png" class="arrow arrow-top" alt="" loading="lazy">
         </div>
         
         <div class="subtitle" id="subtitle">нажми на свинью</div>
@@ -259,6 +312,27 @@
             pigLink.addEventListener('mouseleave', () => {
                 subtitle.textContent = 'нажми на свинью';
             });
+
+            // Обработка ошибок загрузки изображений
+            document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('error', function() {
+                    this.style.display = 'none';
+                    console.log('Изображение не загрузилось:', this.src);
+                });
+            });
+
+            // Оптимизация для медленного интернета
+            if ('connection' in navigator && navigator.connection.effectiveType === 'slow-2g') {
+                document.body.classList.add('slow-connection');
+            }
+
+            // Очистка will-change после анимаций для экономии ресурсов
+            setTimeout(() => {
+                const elementsWithWillChange = document.querySelectorAll('.pig-image, .arrow');
+                elementsWithWillChange.forEach(el => {
+                    el.style.willChange = 'auto';
+                });
+            }, 5000);
         });
     </script>
 </body>
