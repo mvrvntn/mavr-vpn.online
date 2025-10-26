@@ -199,36 +199,39 @@
             animation: pulseTop 1.8s infinite ease-in-out;
         }
 
+        /* Левый палец: двигается ВЛЕВО к свинье (уменьшение расстояния) */
         @keyframes pulseLeft {
             0%, 100% {
                 opacity: 1;
-                transform: translateY(-50%) scaleX(-1) scale(1) translateX(0) translateZ(0);
+                transform: translateY(-50%) scaleX(-1) translateZ(0);
             }
             50% {
-                opacity: 0.5;
-                transform: translateY(-50%) scaleX(-1) scale(1.2) translateX(-8px) translateZ(0);
+                opacity: 0.6;
+                transform: translateY(-50%) scaleX(-1) translateX(12px) scale(1.15) translateZ(0);
             }
         }
 
+        /* Правый палец: двигается ВПРАВО к свинье (уменьшение расстояния) */
         @keyframes pulseRight {
             0%, 100% {
                 opacity: 1;
-                transform: translateY(-50%) scale(1) translateX(0) translateZ(0);
+                transform: translateY(-50%) translateZ(0);
             }
             50% {
-                opacity: 0.5;
-                transform: translateY(-50%) scale(1.2) translateX(8px) translateZ(0);
+                opacity: 0.6;
+                transform: translateY(-50%) translateX(-12px) scale(1.15) translateZ(0);
             }
         }
 
+        /* Верхний палец: двигается ВНИЗ к свинье */
         @keyframes pulseTop {
             0%, 100% {
                 opacity: 1;
-                transform: translateX(-50%) rotate(270deg) scale(1) translateY(0) translateZ(0);
+                transform: translateX(-50%) rotate(270deg) translateZ(0);
             }
             50% {
-                opacity: 0.5;
-                transform: translateX(-50%) rotate(270deg) scale(1.2) translateY(-8px) translateZ(0);
+                opacity: 0.6;
+                transform: translateX(-50%) rotate(270deg) translateY(12px) scale(1.15) translateZ(0);
             }
         }
 
