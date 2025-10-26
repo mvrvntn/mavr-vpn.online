@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Подложи свинью - Свиноводство и разведение свиней</title>
-    <meta name="description" content="Информация о домашних свиньях, свиноводстве и сельском хозяйстве. Породы свиней, кормление, разведение.">
-    <meta name="keywords" content="свиноводство, домашние свиньи, разведение свиней, сельское хозяйство, животноводство">
+    <title>обходняк</title>
+    <meta name="description" content="Технологический сервис.">
+    <meta name="keywords" content="сервис, технология">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="Свиноводческое хозяйство">
+    <meta name="author" content="обходняк">
     
-    <!-- Open Graph для соцсетей -->
-    <meta property="og:title" content="Подложи свинью - Свиноводство">
-    <meta property="og:description" content="Информация о домашних свиньях и свиноводстве">
+    <meta property="og:title" content="обходняк">
+    <meta property="og:description" content="Технологический сервис">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://www.iconarchive.com/download/i137822/microsoft/fluentui-emoji-3d/Pig-Face-3d.1024.png">
     
-    <!-- Дополнительные meta-теги для производительности -->
-    <meta name="theme-color" content="#667eea">
-    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#1C1C22">
+    <meta name="color-scheme" content="dark">
+    
     <link rel="dns-prefetch" href="//www.iconarchive.com">
     <link rel="preconnect" href="https://t.me">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="preload" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Предзагрузка критических изображений -->
     <link rel="preload" as="image" href="https://www.iconarchive.com/download/i137822/microsoft/fluentui-emoji-3d/Pig-Face-3d.1024.png">
     <link rel="preload" as="image" href="https://www.iconarchive.com/download/i109761/microsoft/fluentui-emoji-3d/Backhand-Index-Pointing-Left-3d-Light.1024.png">
     
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7wn5C3PC90ZXh0Pjwvc3ZnPg==">
     <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7wn5C3PC90ZXh0Pjwvc3ZnPg==">
     
@@ -34,33 +34,65 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --color-accent: #8673A1;
+            --color-accent-dark: #756B8F;
+            --color-accent-light: #A088B5;
+            
+            --color-bg-primary: #1C1C22;
+            --color-bg-secondary: #24242C;
+            --color-bg-tertiary: #2E2E38;
+            
+            --color-text-primary: #EDEDF0;
+            --color-text-secondary: #A8AABA;
+            --color-text-tertiary: #7A7C8F;
+            
+            --color-border: #3A3A45;
+            
+            --shadow-md: 0 8px 24px rgba(134, 115, 161, 0.08);
+            --shadow-lg: 0 16px 40px rgba(134, 115, 161, 0.1);
+            
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            
+            --radius-lg: 16px;
+            
+            --transition-base: 220ms cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
-            padding: 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: var(--spacing-lg);
+            background: linear-gradient(135deg, var(--color-bg-primary) 0%, #22222a 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--color-text-primary);
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 30px 20px 40px 20px;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-            max-width: 90%;
+            background: var(--color-bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-2xl);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-lg);
+            max-width: 500px;
             width: 100%;
-            animation: slideIn 0.6s ease-out;
-            will-change: auto;
+            text-align: center;
+            animation: slideIn var(--transition-base) forwards;
         }
 
         @keyframes slideIn {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -69,124 +101,166 @@
         }
 
         .title {
-            font-size: 28px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-size: 52px;
+            font-weight: 700;
+            margin: 0 0 var(--spacing-2xl) 0;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: bold;
-            margin-bottom: 40px;
-            letter-spacing: 1px;
-            filter: drop-shadow(0 2px 8px rgba(102, 126, 234, 0.3));
-            line-height: 1.2;
         }
 
         .pig-wrapper {
             position: relative;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
         }
 
         .pig-link {
             display: inline-block;
             text-decoration: none;
             cursor: pointer;
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: all var(--transition-base);
+            border-radius: 50%;
+            padding: 12px;
+            border: none;
+            background: none;
+        }
+
+        .pig-link:focus {
+            outline: 3px solid var(--color-accent);
+            outline-offset: 4px;
         }
 
         .pig-link:hover {
-            transform: scale(1.05) rotate(-3deg) translateZ(0);
+            transform: scale(1.1) translateZ(0);
         }
 
         .pig-link:active {
-            transform: scale(0.95) translateZ(0);
+            transform: scale(0.92) translateZ(0);
         }
 
         .pig-image {
-            width: 120px;
-            height: 120px;
-            animation: bounce 2.5s infinite ease-in-out;
-            filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.25));
+            width: 160px;
+            height: 160px;
+            display: block;
+            animation: pigBounce 2.8s ease-in-out infinite;
+            filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.3));
             will-change: transform;
             backface-visibility: hidden;
-            perspective: 1000px;
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0) rotate(0deg) translateZ(0); }
-            25% { transform: translateY(-10px) rotate(-2deg) translateZ(0); }
-            50% { transform: translateY(-5px) rotate(0deg) translateZ(0); }
-            75% { transform: translateY(-8px) rotate(2deg) translateZ(0); }
+        @keyframes pigBounce {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+            25% {
+                transform: translateY(-14px) rotate(-2deg) scale(1.02);
+            }
+            50% {
+                transform: translateY(-6px) rotate(0deg) scale(1);
+            }
+            75% {
+                transform: translateY(-10px) rotate(2deg) scale(1.01);
+            }
         }
 
         .arrow {
             position: absolute;
-            width: 30px;
-            height: 30px;
+            width: 45px;
+            height: 45px;
             pointer-events: none;
-            filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.15));
+            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
             will-change: transform;
             backface-visibility: hidden;
         }
 
         .arrow-left {
-            left: -40px;
+            left: -58px;
             top: 50%;
             transform: translateY(-50%) scaleX(-1) translateZ(0);
-            animation: pulseLeft 1.6s infinite ease-in-out;
+            animation: pulseLeft 1.8s infinite ease-in-out;
         }
 
         .arrow-right {
-            right: -40px;
+            right: -58px;
             top: 50%;
             transform: translateY(-50%) translateZ(0);
-            animation: pulseRight 1.6s infinite ease-in-out;
+            animation: pulseRight 1.8s infinite ease-in-out;
         }
 
         .arrow-top {
-            top: -35px;
+            top: -50px;
             left: 50%;
             transform: translateX(-50%) rotate(270deg) translateZ(0);
-            animation: pulseTop 1.6s infinite ease-in-out;
+            animation: pulseTop 1.8s infinite ease-in-out;
         }
 
         @keyframes pulseLeft {
-            0%, 100% { opacity: 1; transform: translateY(-50%) scaleX(-1) scale(1) translateZ(0); }
-            50% { opacity: 0.4; transform: translateY(-50%) scaleX(-1) scale(1.15) translateZ(0); }
+            0%, 100% {
+                opacity: 1;
+                transform: translateY(-50%) scaleX(-1) scale(1) translateX(0) translateZ(0);
+            }
+            50% {
+                opacity: 0.5;
+                transform: translateY(-50%) scaleX(-1) scale(1.2) translateX(-8px) translateZ(0);
+            }
         }
 
         @keyframes pulseRight {
-            0%, 100% { opacity: 1; transform: translateY(-50%) scale(1) translateZ(0); }
-            50% { opacity: 0.4; transform: translateY(-50%) scale(1.15) translateZ(0); }
+            0%, 100% {
+                opacity: 1;
+                transform: translateY(-50%) scale(1) translateX(0) translateZ(0);
+            }
+            50% {
+                opacity: 0.5;
+                transform: translateY(-50%) scale(1.2) translateX(8px) translateZ(0);
+            }
         }
 
         @keyframes pulseTop {
-            0%, 100% { opacity: 1; transform: translateX(-50%) rotate(270deg) scale(1) translateZ(0); }
-            50% { opacity: 0.4; transform: translateX(-50%) rotate(270deg) scale(1.15) translateZ(0); }
+            0%, 100% {
+                opacity: 1;
+                transform: translateX(-50%) rotate(270deg) scale(1) translateY(0) translateZ(0);
+            }
+            50% {
+                opacity: 0.5;
+                transform: translateX(-50%) rotate(270deg) scale(1.2) translateY(-8px) translateZ(0);
+            }
         }
 
         .subtitle {
-            color: #667eea;
-            font-size: 16px;
-            font-weight: 600;
-            margin-top: 10px;
-            animation: subtitlePulse 2.5s infinite ease-in-out;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--color-accent-light);
+            margin: var(--spacing-lg) 0 0 0;
+            letter-spacing: 0.3px;
+            animation: subtitlePulse 2.8s ease-in-out infinite;
+            min-height: 24px;
         }
 
         @keyframes subtitlePulse {
-            0%, 100% { opacity: 1; transform: scale(1) translateZ(0); }
-            50% { opacity: 0.75; transform: scale(1.02) translateZ(0); }
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1) translateZ(0);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.03) translateZ(0);
+            }
         }
 
-        .disclaimer {
-            margin-top: 25px;
-            font-size: 11px;
-            color: #888;
-            line-height: 1.4;
-            padding: 0 10px;
+        .hint {
+            font-size: 13px;
+            color: var(--color-text-tertiary);
+            margin-top: var(--spacing-xl);
+            letter-spacing: 0.2px;
+            line-height: 1.6;
         }
 
-        /* Оптимизация для пользователей с предпочтением уменьшения движения */
         @media (prefers-reduced-motion: reduce) {
             .pig-image,
             .arrow,
@@ -197,102 +271,180 @@
             }
             
             .pig-link:hover {
-                transform: scale(1.02) translateZ(0);
+                transform: scale(1.05);
             }
         }
 
-        /* Оптимизация для слабых устройств */
-        @media (max-width: 480px) and (max-resolution: 150dpi) {
-            .pig-image {
-                animation-duration: 4s;
-            }
-            
-            .arrow {
-                animation-duration: 2.4s;
-            }
-        }
-
-        /* Упрощенная версия для медленных соединений */
-        .slow-connection .pig-image,
-        .slow-connection .arrow {
-            animation: none;
-            filter: none;
-        }
-
-        .slow-connection .container {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Медиа-запросы для мобильной адаптивности */
         @media (max-width: 480px) {
-            body { padding: 10px; }
-            .container { padding: 25px 15px 30px 15px; border-radius: 16px; max-width: 95%; }
-            .title { font-size: 24px; margin-bottom: 30px; letter-spacing: 0.5px; }
-            .pig-image { width: 100px; height: 100px; }
-            .arrow { width: 25px; height: 25px; }
-            .arrow-left { left: -32px; }
-            .arrow-right { right: -32px; }
-            .arrow-top { top: -30px; }
-            .subtitle { font-size: 15px; }
-            .disclaimer { font-size: 10px; padding: 0 5px; }
+            body {
+                padding: 16px;
+            }
+
+            .container {
+                padding: var(--spacing-xl) var(--spacing-lg);
+                border-radius: 12px;
+            }
+
+            .title {
+                font-size: 36px;
+                margin-bottom: var(--spacing-xl);
+            }
+
+            .pig-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .arrow {
+                width: 35px;
+                height: 35px;
+            }
+
+            .arrow-left {
+                left: -45px;
+            }
+
+            .arrow-right {
+                right: -45px;
+            }
+
+            .arrow-top {
+                top: -40px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .hint {
+                font-size: 12px;
+                margin-top: var(--spacing-lg);
+            }
         }
 
-        @media (max-width: 320px) {
-            .container { padding: 20px 12px 25px 12px; }
-            .title { font-size: 22px; margin-bottom: 25px; }
-            .pig-image { width: 90px; height: 90px; }
-            .arrow { width: 22px; height: 22px; }
-            .arrow-left { left: -28px; }
-            .arrow-right { right: -28px; }
-            .arrow-top { top: -25px; }
-            .subtitle { font-size: 14px; }
+        @media (max-width: 360px) {
+            .container {
+                padding: var(--spacing-lg);
+            }
+
+            .title {
+                font-size: 28px;
+                margin-bottom: var(--spacing-lg);
+            }
+
+            .pig-image {
+                width: 100px;
+                height: 100px;
+            }
+
+            .arrow {
+                width: 30px;
+                height: 30px;
+            }
+
+            .arrow-left {
+                left: -38px;
+            }
+
+            .arrow-right {
+                right: -38px;
+            }
+
+            .arrow-top {
+                top: -35px;
+            }
         }
 
-        @media (min-width: 481px) and (max-width: 768px) {
-            .container { padding: 40px 30px 45px 30px; border-radius: 24px; max-width: 80%; }
-            .title { font-size: 36px; margin-bottom: 50px; }
-            .pig-image { width: 160px; height: 160px; }
-            .arrow { width: 40px; height: 40px; }
-            .arrow-left { left: -55px; }
-            .arrow-right { right: -55px; }
-            .arrow-top { top: -45px; }
-            .subtitle { font-size: 18px; }
+        @media (min-width: 768px) {
+            .container {
+                padding: var(--spacing-2xl) 48px;
+            }
+
+            .title {
+                font-size: 64px;
+                margin-bottom: 48px;
+            }
+
+            .pig-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .arrow {
+                width: 55px;
+                height: 55px;
+            }
+
+            .arrow-left {
+                left: -75px;
+            }
+
+            .arrow-right {
+                right: -75px;
+            }
+
+            .arrow-top {
+                top: -65px;
+            }
+
+            .subtitle {
+                font-size: 20px;
+            }
         }
 
-        @media (min-width: 769px) {
-            .container { padding: 50px 60px 60px 60px; border-radius: 32px; max-width: 550px; }
-            .title { font-size: 48px; margin-bottom: 80px; letter-spacing: 3px; }
-            .pig-image { width: 220px; height: 220px; }
-            .arrow { width: 50px; height: 50px; }
-            .arrow-left { left: -70px; }
-            .arrow-right { right: -70px; }
-            .arrow-top { top: -60px; }
-            .subtitle { font-size: 21px; }
-            .disclaimer { font-size: 12px; margin-top: 30px; }
-        }
-
-        @media (min-width: 1200px) {
-            .container { padding: 60px 80px 70px 80px; }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="title">Подложи свинью</div>
+        <h1 class="title">обходняк</h1>
         
         <div class="pig-wrapper">
-            <a href="#" class="pig-link" id="pigLink">
-                <img src="https://www.iconarchive.com/download/i137822/microsoft/fluentui-emoji-3d/Pig-Face-3d.1024.png" alt="Свинья" class="pig-image">
-            </a>
-            <img src="https://www.iconarchive.com/download/i109761/microsoft/fluentui-emoji-3d/Backhand-Index-Pointing-Left-3d-Light.1024.png" class="arrow arrow-left" alt="" loading="lazy">
-            <img src="https://www.iconarchive.com/download/i109761/microsoft/fluentui-emoji-3d/Backhand-Index-Pointing-Left-3d-Light.1024.png" class="arrow arrow-right" alt="" loading="lazy">
-            <img src="https://www.iconarchive.com/download/i109761/microsoft/fluentui-emoji-3d/Backhand-Index-Pointing-Left-3d-Light.1024.png" class="arrow arrow-top" alt="" loading="lazy">
+            <button class="pig-link" id="pigLink" aria-label="Нажми на свинью">
+                <img 
+                    src="https://www.iconarchive.com/download/i137822/microsoft/fluentui-emoji-3d/Pig-Face-3d.1024.png" 
+                    alt="Свинья" 
+                    class="pig-image"
+                    loading="lazy"
+                >
+            </button>
+            <img 
+                src="https://www.iconarchive.com/download/i109761/microsoft/fluentui-emoji-3d/Backhand-Index-Pointing-Left-3d-Light.1024.png" 
+                class="arrow arrow-left" 
+                alt="" 
+                loading="lazy"
+                aria-hidden="true"
+            >
+            <img 
+                src="https://www.iconarchive.com/download/i109761/microsoft/fluentui-emoji-3d/Backhand-Index-Pointing-Left-3d-Light.1024.png" 
+                class="arrow arrow-right" 
+                alt="" 
+                loading="lazy"
+                aria-hidden="true"
+            >
+            <img 
+                src="https://www.iconarchive.com/download/i109761/microsoft/fluentui-emoji-3d/Backhand-Index-Pointing-Left-3d-Light.1024.png" 
+                class="arrow arrow-top" 
+                alt="" 
+                loading="lazy"
+                aria-hidden="true"
+            >
         </div>
         
         <div class="subtitle" id="subtitle">нажми на свинью</div>
 
-        <div class="disclaimer">
-            Информация о домашнем свиноводстве. Не является рекламой. Свиньи — полезные животные.
+        <div class="hint">
+            Технологический сервис
         </div>
     </div>
 
@@ -303,7 +455,10 @@
             const pigLink = document.getElementById('pigLink');
             const subtitle = document.getElementById('subtitle');
 
-            pigLink.href = fullLink;
+            pigLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.open(fullLink, '_blank', 'noopener,noreferrer');
+            });
 
             pigLink.addEventListener('mouseenter', () => {
                 subtitle.textContent = 'ты уверен?';
@@ -313,26 +468,47 @@
                 subtitle.textContent = 'нажми на свинью';
             });
 
+            pigLink.addEventListener('focus', () => {
+                subtitle.textContent = 'ты уверен?';
+            });
+
+            pigLink.addEventListener('blur', () => {
+                subtitle.textContent = 'нажми на свинью';
+            });
+
+            // Для мобильных устройств
+            pigLink.addEventListener('touchstart', () => {
+                subtitle.textContent = 'ты уверен?';
+            });
+
+            pigLink.addEventListener('touchend', () => {
+                subtitle.textContent = 'нажми на свинью';
+            });
+
             // Обработка ошибок загрузки изображений
             document.querySelectorAll('img').forEach(img => {
                 img.addEventListener('error', function() {
                     this.style.display = 'none';
-                    console.log('Изображение не загрузилось:', this.src);
+                    console.log('Image failed to load:', this.src);
                 });
             });
 
             // Оптимизация для медленного интернета
-            if ('connection' in navigator && navigator.connection.effectiveType === 'slow-2g') {
-                document.body.classList.add('slow-connection');
+            if ('connection' in navigator) {
+                const connection = navigator.connection.effectiveType;
+                if (connection === 'slow-2g' || connection === '2g') {
+                    document.querySelectorAll('.pig-image, .arrow').forEach(el => {
+                        el.style.animation = 'none';
+                    });
+                }
             }
 
-            // Очистка will-change после анимаций для экономии ресурсов
+            // Очистка will-change после анимаций
             setTimeout(() => {
-                const elementsWithWillChange = document.querySelectorAll('.pig-image, .arrow');
-                elementsWithWillChange.forEach(el => {
+                document.querySelectorAll('.pig-image, .arrow').forEach(el => {
                     el.style.willChange = 'auto';
                 });
-            }, 5000);
+            }, 3000);
         });
     </script>
 </body>
