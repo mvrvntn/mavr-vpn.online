@@ -14,7 +14,7 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://www.iconarchive.com/download/i137822/microsoft/fluentui-emoji-3d/Pig-Face-3d.1024.png">
     
-    <meta name="theme-color" content="#1C1C22">
+    <meta name="theme-color" content="#c050a0">
     <meta name="color-scheme" content="dark">
     
     <link rel="dns-prefetch" href="//www.iconarchive.com">
@@ -35,22 +35,15 @@
         }
 
         :root {
-            --color-accent: #8673A1;
-            --color-accent-dark: #756B8F;
-            --color-accent-light: #A088B5;
-            
-            --color-bg-primary: #1C1C22;
-            --color-bg-secondary: #24242C;
-            --color-bg-tertiary: #2E2E38;
+            /* Цвета из ваших аватаров свиньи */
+            --color-accent: #9050e0;
+            --color-accent-dark: #7040c0;
+            --color-accent-light: #a050d0;
+            --color-accent-pink: #c050a0;
             
             --color-text-primary: #EDEDF0;
-            --color-text-secondary: #A8AABA;
-            --color-text-tertiary: #7A7C8F;
-            
-            --color-border: #3A3A45;
-            
-            --shadow-md: 0 8px 24px rgba(134, 115, 161, 0.08);
-            --shadow-lg: 0 16px 40px rgba(134, 115, 161, 0.1);
+            --color-text-secondary: #f0d0ff;
+            --color-text-tertiary: #d0a0e0;
             
             --spacing-lg: 24px;
             --spacing-xl: 32px;
@@ -68,7 +61,8 @@
         body {
             margin: 0;
             padding: var(--spacing-lg);
-            background: linear-gradient(135deg, var(--color-bg-primary) 0%, #22222a 100%);
+            /* ГРАДИЕНТ КАК НА АВАТАРАХ! */
+            background: linear-gradient(135deg, #c050a0 0%, #9050e0 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -78,15 +72,29 @@
         }
 
         .container {
-            background: var(--color-bg-secondary);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-radius: var(--radius-lg);
             padding: var(--spacing-2xl);
-            border: 1px solid var(--color-border);
-            box-shadow: var(--shadow-lg);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3), 
+                        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
             max-width: 500px;
             width: 100%;
             text-align: center;
             animation: slideIn var(--transition-base) forwards;
+            /* Улучшенный Liquid Glass эффект при ховере */
+            transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        /* Дополнительные Liquid Glass эффекты */
+        .container:hover {
+            background: rgba(255, 255, 255, 0.22);
+            border-color: rgba(255, 255, 255, 0.35);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4), 
+                        0 0 0 1px rgba(255, 255, 255, 0.2) inset;
         }
 
         @keyframes slideIn {
@@ -106,10 +114,20 @@
             margin: 0 0 var(--spacing-2xl) 0;
             letter-spacing: -1px;
             line-height: 1.1;
-            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ffffff;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            /* Улучшенный эффект свечения */
+            animation: titleGlow 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            0% {
+                text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            }
+            100% {
+                text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3), 
+                             0 0 30px rgba(255, 255, 255, 0.2);
+            }
         }
 
         .pig-wrapper {
@@ -127,16 +145,20 @@
             border-radius: 50%;
             padding: 12px;
             border: none;
-            background: none;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .pig-link:focus {
-            outline: 3px solid var(--color-accent);
+            outline: 3px solid rgba(255, 255, 255, 0.8);
             outline-offset: 4px;
         }
 
         .pig-link:hover {
             transform: scale(1.1) translateZ(0);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
         }
 
         .pig-link:active {
@@ -148,9 +170,15 @@
             height: 160px;
             display: block;
             animation: pigBounce 2.8s ease-in-out infinite;
-            filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.3));
+            filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4));
             will-change: transform;
             backface-visibility: hidden;
+            transition: filter 0.3s ease;
+        }
+
+        .pig-link:hover .pig-image {
+            filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.5));
+            animation-duration: 2s;
         }
 
         @keyframes pigBounce {
@@ -173,11 +201,19 @@
             width: 45px;
             height: 45px;
             pointer-events: none;
-            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
             will-change: transform;
             backface-visibility: hidden;
+            transition: filter 0.3s ease;
         }
 
+        /* Улучшенные эффекты указателей при ховере на свинью */
+        .pig-wrapper:hover .arrow {
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+            animation-duration: 1.2s;
+        }
+
+        /* ПРАВИЛЬНЫЕ УКАЗАТЕЛИ */
         .arrow-left {
             left: -58px;
             top: 50%;
@@ -192,14 +228,14 @@
             animation: pulseRight 1.8s infinite ease-in-out;
         }
 
+        /* ИСПРАВЛЕНО: -90deg чтобы указывать ВНИЗ */
         .arrow-top {
             top: -50px;
             left: 50%;
-            transform: translateX(-50%) rotate(270deg) translateZ(0);
+            transform: translateX(-50%) rotate(-90deg) translateZ(0);
             animation: pulseTop 1.8s infinite ease-in-out;
         }
 
-        /* Левый палец: двигается ВЛЕВО к свинье (уменьшение расстояния) */
         @keyframes pulseLeft {
             0%, 100% {
                 opacity: 1;
@@ -211,7 +247,6 @@
             }
         }
 
-        /* Правый палец: двигается ВПРАВО к свинье (уменьшение расстояния) */
         @keyframes pulseRight {
             0%, 100% {
                 opacity: 1;
@@ -223,26 +258,34 @@
             }
         }
 
-        /* Верхний палец: двигается ВНИЗ к свинье */
         @keyframes pulseTop {
             0%, 100% {
                 opacity: 1;
-                transform: translateX(-50%) rotate(270deg) translateZ(0);
+                transform: translateX(-50%) rotate(-90deg) translateZ(0);
             }
             50% {
                 opacity: 0.6;
-                transform: translateX(-50%) rotate(270deg) translateY(12px) scale(1.15) translateZ(0);
+                transform: translateX(-50%) rotate(-90deg) translateY(12px) scale(1.15) translateZ(0);
             }
         }
 
         .subtitle {
             font-size: 18px;
             font-weight: 500;
-            color: var(--color-accent-light);
+            color: #ffffff;
             margin: var(--spacing-lg) 0 0 0;
             letter-spacing: 0.3px;
             animation: subtitlePulse 2.8s ease-in-out infinite;
             min-height: 24px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        /* Улучшенный эффект для subtitle при ховере */
+        .subtitle.hover-effect {
+            transform: scale(1.05);
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
         }
 
         @keyframes subtitlePulse {
@@ -251,24 +294,39 @@
                 transform: scale(1) translateZ(0);
             }
             50% {
-                opacity: 0.7;
+                opacity: 0.8;
                 transform: scale(1.03) translateZ(0);
             }
         }
 
         .hint {
             font-size: 13px;
-            color: var(--color-text-tertiary);
+            color: rgba(255, 255, 255, 0.85);
             margin-top: var(--spacing-xl);
             letter-spacing: 0.2px;
             line-height: 1.6;
+            /* Добавлен Liquid Glass эффект для описания */
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .hint:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.95);
         }
 
         @media (prefers-reduced-motion: reduce) {
             .pig-image,
             .arrow,
             .subtitle,
-            .container {
+            .container,
+            .title {
                 animation: none !important;
                 transition: none !important;
             }
@@ -421,6 +479,9 @@
                     loading="lazy"
                 >
             </button>
+            
+            <!-- ИСПРАВЛЕННЫЕ УКАЗАТЕЛИ -->
+            <!-- Левый: отзеркален scaleX(-1) - указывает ВПРАВО на свинью -->
             <img 
                 src="https://www.iconarchive.com/download/i109761/microsoft/fluentui-emoji-3d/Backhand-Index-Pointing-Left-3d-Light.1024.png" 
                 class="arrow arrow-left" 
@@ -428,6 +489,8 @@
                 loading="lazy"
                 aria-hidden="true"
             >
+            
+            <!-- Правый: без изменений - указывает ВЛЕВО на свинью -->
             <img 
                 src="https://www.iconarchive.com/download/i109761/microsoft/fluentui-emoji-3d/Backhand-Index-Pointing-Left-3d-Light.1024.png" 
                 class="arrow arrow-right" 
@@ -435,6 +498,8 @@
                 loading="lazy"
                 aria-hidden="true"
             >
+            
+            <!-- Верхний: повернут -90° - указывает ВНИЗ на свинью -->
             <img 
                 src="https://www.iconarchive.com/download/i109761/microsoft/fluentui-emoji-3d/Backhand-Index-Pointing-Left-3d-Light.1024.png" 
                 class="arrow arrow-top" 
@@ -463,30 +528,39 @@
                 window.open(fullLink, '_blank', 'noopener,noreferrer');
             });
 
+            // Улучшенные hover эффекты
             pigLink.addEventListener('mouseenter', () => {
                 subtitle.textContent = 'ты уверен?';
+                subtitle.classList.add('hover-effect');
             });
 
             pigLink.addEventListener('mouseleave', () => {
                 subtitle.textContent = 'нажми на свинью';
+                subtitle.classList.remove('hover-effect');
             });
 
             pigLink.addEventListener('focus', () => {
                 subtitle.textContent = 'ты уверен?';
+                subtitle.classList.add('hover-effect');
             });
 
             pigLink.addEventListener('blur', () => {
                 subtitle.textContent = 'нажми на свинью';
+                subtitle.classList.remove('hover-effect');
             });
 
             // Для мобильных устройств
             pigLink.addEventListener('touchstart', () => {
                 subtitle.textContent = 'ты уверен?';
-            });
+                subtitle.classList.add('hover-effect');
+            }, { passive: true });
 
             pigLink.addEventListener('touchend', () => {
-                subtitle.textContent = 'нажми на свинью';
-            });
+                setTimeout(() => {
+                    subtitle.textContent = 'нажми на свинью';
+                    subtitle.classList.remove('hover-effect');
+                }, 150);
+            }, { passive: true });
 
             // Обработка ошибок загрузки изображений
             document.querySelectorAll('img').forEach(img => {
@@ -497,7 +571,7 @@
             });
 
             // Оптимизация для медленного интернета
-            if ('connection' in navigator) {
+            if ('connection' in navigator && navigator.connection) {
                 const connection = navigator.connection.effectiveType;
                 if (connection === 'slow-2g' || connection === '2g') {
                     document.querySelectorAll('.pig-image, .arrow').forEach(el => {
